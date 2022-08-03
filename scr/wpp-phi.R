@@ -1,7 +1,10 @@
 #===============================================================================
-# 2022-03-23 -- outliving
+# 2022-08-02 -- outliving
 # WPP life tables -- whole world
-# Ilya Kashnitsky, ilya.kashnitsky@gmail.com, @ikashnitsky
+# Marie-Pier Bergeron-Boucher http://orcid.org/0000-0001-7383-3175 
+# Jesús-Adrian Alvarez http://orcid.org/0000-0002-3724-6149
+# Ilya Kashnitsky http://orcid.org/0000-0003-1835-8687 (code questions: ilya.kashnitsky@gmail.com)
+# Virginia Zarulli http://orcid.org/0000-0003-3219-4658
 #===============================================================================
 
 library(tidyverse)
@@ -10,7 +13,7 @@ library(sf)
 library(hrbrthemes)
 library(patchwork)
 
-
+# this script uses already prepared dataset with WPP life tables, to replicate the data preparation steps departing from the openly available data see "scr/wpp-life-tables.R"
 load("dat/lt_abr.rda")
 
 # calculate phi
@@ -49,7 +52,7 @@ country_borders <- world_outline_robinson %>%
     rmapshaper::ms_innerlines()
 
 
-# merge the data and borders
+# merge the data and spatial object
 df_map <- world_outline_robinson %>% 
     left_join(wpp_phi, by = c("iso_a2" = "iso2"))
 

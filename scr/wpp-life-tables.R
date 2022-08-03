@@ -1,7 +1,10 @@
 #===============================================================================
-# 2022-03-23 -- data
-# WPP life tables
-# Ilya Kashnitsky, ilya.kashnitsky@gmail.com, @ikashnitsky
+# 2022-08-02 -- outliving
+# WPP life tables -- whole world
+# Marie-Pier Bergeron-Boucher http://orcid.org/0000-0001-7383-3175 
+# Jesús-Adrian Alvarez http://orcid.org/0000-0002-3724-6149
+# Ilya Kashnitsky http://orcid.org/0000-0003-1835-8687 (code questions: ilya.kashnitsky@gmail.com)
+# Virginia Zarulli http://orcid.org/0000-0003-3219-4658
 #===============================================================================
 
 library(tidyverse)
@@ -9,7 +12,10 @@ library(magrittr)
 library(readxl)
 library(countrycode)
 
-# xlsx form here: https://population.un.org/wpp/Download/Standard/Mortality
+# UN World Population Prospects 2019 data, freely available here (xlsx):
+# https://population.un.org/wpp/Download/Standard/Mortality
+
+# To replicate the data processing step you would need to download the mentioned xlsx files and place them in a "dat/wpp/" directory
 
 both <- read_excel(
     "dat/wpp/WPP2019_MORT_F17_1_ABRIDGED_LIFE_TABLE_BOTH_SEXES.xlsx",
